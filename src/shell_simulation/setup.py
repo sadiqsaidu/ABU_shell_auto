@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            "perception = shell_simulation.perception:main",
         ],
     },
 )
