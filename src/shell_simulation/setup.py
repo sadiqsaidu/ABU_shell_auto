@@ -21,6 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             "perception = shell_simulation.perception:main",
+            "planning = shell_simulation.planning:main",
+            "control = shell_simulation.control:main",
         ],
     },
 )

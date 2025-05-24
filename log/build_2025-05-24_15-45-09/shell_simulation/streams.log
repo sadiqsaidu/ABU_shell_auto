@@ -1,0 +1,32 @@
+[3.088s] Invoking command in '/home/sadiq/shell_ws/src/shell_simulation': PYTHONPATH=/home/sadiq/shell_ws/build/shell_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/shell_simulation build --build-base /home/sadiq/shell_ws/build/shell_simulation/build install --record /home/sadiq/shell_ws/build/shell_simulation/install.log --single-version-externally-managed install_data
+[3.912s] running egg_info
+[3.914s] writing ../../build/shell_simulation/shell_simulation.egg-info/PKG-INFO
+[3.930s] writing dependency_links to ../../build/shell_simulation/shell_simulation.egg-info/dependency_links.txt
+[3.931s] writing entry points to ../../build/shell_simulation/shell_simulation.egg-info/entry_points.txt
+[3.932s] writing requirements to ../../build/shell_simulation/shell_simulation.egg-info/requires.txt
+[3.932s] writing top-level names to ../../build/shell_simulation/shell_simulation.egg-info/top_level.txt
+[3.940s] reading manifest file '../../build/shell_simulation/shell_simulation.egg-info/SOURCES.txt'
+[3.945s] writing manifest file '../../build/shell_simulation/shell_simulation.egg-info/SOURCES.txt'
+[3.946s] running build
+[3.947s] running build_py
+[3.948s] copying shell_simulation/perception.py -> /home/sadiq/shell_ws/build/shell_simulation/build/lib/shell_simulation
+[3.948s] copying shell_simulation/planning.py -> /home/sadiq/shell_ws/build/shell_simulation/build/lib/shell_simulation
+[3.950s] copying shell_simulation/control.py -> /home/sadiq/shell_ws/build/shell_simulation/build/lib/shell_simulation
+[3.950s] running install
+[3.953s] running install_lib
+[3.954s] copying /home/sadiq/shell_ws/build/shell_simulation/build/lib/shell_simulation/perception.py -> /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation
+[3.954s] copying /home/sadiq/shell_ws/build/shell_simulation/build/lib/shell_simulation/planning.py -> /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation
+[3.955s] copying /home/sadiq/shell_ws/build/shell_simulation/build/lib/shell_simulation/control.py -> /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation
+[3.958s] byte-compiling /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation/perception.py to perception.cpython-310.pyc
+[3.978s] byte-compiling /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation/planning.py to planning.cpython-310.pyc
+[3.979s] byte-compiling /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation/control.py to control.cpython-310.pyc
+[3.983s] running install_data
+[3.984s] running install_egg_info
+[3.988s] removing '/home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation-0.0.0-py3.10.egg-info' (and everything under it)
+[3.990s] Copying ../../build/shell_simulation/shell_simulation.egg-info to /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation-0.0.0-py3.10.egg-info
+[4.023s] running install_scripts
+[4.093s] Installing control script to /home/sadiq/shell_ws/install/shell_simulation/lib/shell_simulation
+[4.094s] Installing perception script to /home/sadiq/shell_ws/install/shell_simulation/lib/shell_simulation
+[4.095s] Installing planning script to /home/sadiq/shell_ws/install/shell_simulation/lib/shell_simulation
+[4.095s] writing list of installed files to '/home/sadiq/shell_ws/build/shell_simulation/install.log'
+[4.179s] Invoked command in '/home/sadiq/shell_ws/src/shell_simulation' returned '0': PYTHONPATH=/home/sadiq/shell_ws/build/shell_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/shell_simulation build --build-base /home/sadiq/shell_ws/build/shell_simulation/build install --record /home/sadiq/shell_ws/build/shell_simulation/install.log --single-version-externally-managed install_data

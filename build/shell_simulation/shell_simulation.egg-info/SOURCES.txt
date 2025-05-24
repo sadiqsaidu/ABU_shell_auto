@@ -10,6 +10,9 @@ setup.py
 ../../build/shell_simulation/shell_simulation.egg-info/zip-safe
 resource/shell_simulation
 shell_simulation/__init__.py
+shell_simulation/control.py
+shell_simulation/perception.py
+shell_simulation/planning.py
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py

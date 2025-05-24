@@ -1,4 +1,10 @@
+/home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation/perception.py
+/home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation/planning.py
+/home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation/control.py
 /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation/__init__.py
+/home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation/__pycache__/perception.cpython-310.pyc
+/home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation/__pycache__/planning.cpython-310.pyc
+/home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation/__pycache__/control.cpython-310.pyc
 /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation/__pycache__/__init__.cpython-310.pyc
 /home/sadiq/shell_ws/install/shell_simulation/share/ament_index/resource_index/packages/shell_simulation
 /home/sadiq/shell_ws/install/shell_simulation/share/shell_simulation/package.xml
@@ -9,3 +15,6 @@
 /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation-0.0.0-py3.10.egg-info/entry_points.txt
 /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation-0.0.0-py3.10.egg-info/top_level.txt
 /home/sadiq/shell_ws/install/shell_simulation/lib/python3.10/site-packages/shell_simulation-0.0.0-py3.10.egg-info/PKG-INFO
+/home/sadiq/shell_ws/install/shell_simulation/lib/shell_simulation/control
+/home/sadiq/shell_ws/install/shell_simulation/lib/shell_simulation/perception
+/home/sadiq/shell_ws/install/shell_simulation/lib/shell_simulation/planning

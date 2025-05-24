@@ -1,3 +1,5 @@
 [console_scripts]
-
+control = shell_simulation.control:main
+perception = shell_simulation.perception:main
+planning = shell_simulation.planning:main
 
