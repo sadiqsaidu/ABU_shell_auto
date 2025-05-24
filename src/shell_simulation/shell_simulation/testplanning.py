@@ -10,6 +10,11 @@ from nav_msgs.msg import Odometry
 from sensor_msgs.msg import NavSatFix
 from carla_msgs.msg import CarlaEgoVehicleStatus, CarlaTrafficLightStatusList
 
+# Constants for traffic light states
+TRAFFIC_LIGHT_GREEN = 0
+TRAFFIC_LIGHT_YELLOW = 1
+TRAFFIC_LIGHT_RED = 2
+
 class PlanningNode(Node):  
     def __init__(self):
         super().__init__("planning")
@@ -37,24 +42,33 @@ class PlanningNode(Node):
         
         # Solve TSP
         self.optimal_path = self.solve_tsp()
+        if not self.optimal_path:
+            self.get_logger().error("Failed to find TSP solution!")
+            raise RuntimeError("TSP solution not found")
+        
         self.current_waypoint_idx = 0
         self.obstacles = []
         self.lane_detected = True
         self.traffic_light_status = None
         self.current_pose = None
         self.gnss_position = None
+        self.last_obstacle_check = self.get_clock().now()
+        self.last_lane_update = self.get_clock().now()
+        self.last_traffic_light_update = self.get_clock().now()
 
         # ROS Publishers
         self.path_pub = self.create_publisher(Path, '/planning/path', 10)
         self.next_wp_pub = self.create_publisher(PoseStamped, '/planning/next_waypoint', 10)
 
         # ROS Subscribers
+        # NOTE: Replace with correct message types for obstacles and lane detection
+        # Currently using CarlaEgoVehicleStatus as placeholder
         self.obstacles_sub = self.create_subscription(
             CarlaEgoVehicleStatus, '/perception/obstacles', self.obstacles_callback, 10)
         self.lane_sub = self.create_subscription(
             CarlaEgoVehicleStatus, '/perception/lane_detected', self.lane_callback, 10)
         self.traffic_light_sub = self.create_subscription(
-            CarlaTrafficLightStatusList, '/perception/traffic_light', self.traffic_light_callback, 10)
+            CarlaTrafficLightStatusList, '/carla/traffic_lights', self.traffic_light_callback, 10)
         self.gnss_sub = self.create_subscription(
             NavSatFix, '/carla/ego_vehicle/gnss', self.gnss_callback, 10)
         self.odom_sub = self.create_subscription(
@@ -98,7 +112,7 @@ class PlanningNode(Node):
             
             for next_wp in range(14):
                 if not (mask & (1 << next_wp)):
-                    next_index = next_wp + 1
+                    next_index = next_wp + 1  # +1 because points[0] is start point
                     new_cost = cost + self.distance_matrix[current][next_index]
                     new_mask = mask | (1 << next_wp)
                     new_path = path + [next_index]
@@ -164,34 +178,68 @@ class PlanningNode(Node):
             pose.pose.position.y = wp[1]
             pose.pose.position.z = wp[2]
             self.next_wp_pub.publish(pose)
+            self.get_logger().info(f"Published waypoint {self.current_waypoint_idx}: {wp}")
 
     def obstacles_callback(self, msg):
-        self.obstacles = msg.obstacles
+        # Placeholder - replace with actual obstacle processing
+        # Currently using CarlaEgoVehicleStatus as placeholder
+        self.obstacles = []  # msg.obstacles would be the correct field
+        self.last_obstacle_check = self.get_clock().now()
 
     def lane_callback(self, msg):
-        self.lane_detected = msg.lane_detected
+        # Placeholder - replace with actual lane detection processing
+        # Currently using CarlaEgoVehicleStatus as placeholder
+        self.lane_detected = True  # msg.lane_detected would be the correct field
+        self.last_lane_update = self.get_clock().now()
 
     def traffic_light_callback(self, msg):
         self.traffic_light_status = msg.status
+        self.last_traffic_light_update = self.get_clock().now()
 
     def gnss_callback(self, msg):
         self.gnss_position = (msg.latitude, msg.longitude, msg.altitude)
 
     def odom_callback(self, msg):
+        if not self.optimal_path:
+            return
+            
         self.current_pose = msg.pose.pose
         current_x = self.current_pose.position.x
         current_y = self.current_pose.position.y
-        target = self.optimal_path[self.current_waypoint_idx]
+        
+        try:
+            target = self.optimal_path[self.current_waypoint_idx]
+        except IndexError:
+            self.get_logger().info("Reached final waypoint!")
+            return
+            
         distance = math.hypot(target[0] - current_x, target[1] - current_y)
         
-        # Check for obstacles, lane, and traffic light before proceeding
+        # Check if sensor data is recent (within 1 second)
+        current_time = self.get_clock().now()
+        recent_obstacle_data = (current_time - self.last_obstacle_check).nanoseconds < 1e9
+        recent_lane_data = (current_time - self.last_lane_update).nanoseconds < 1e9
+        recent_traffic_data = (current_time - self.last_traffic_light_update).nanoseconds < 1e9
+        
         if (distance < 2.0 and 
             self.current_waypoint_idx < len(self.optimal_path) - 1 and
-            not self.obstacles and 
-            self.lane_detected and
-            (self.traffic_light_status is None or all(light.state == 0 for light in self.traffic_light_status))):  # 0 for green
-            self.current_waypoint_idx += 1
-            self.publish_next_waypoint()
+            recent_obstacle_data and recent_lane_data and recent_traffic_data):
+            
+            # Traffic light check
+            traffic_light_ok = True
+            if self.traffic_light_status is not None:
+                traffic_light_ok = all(light.state == TRAFFIC_LIGHT_GREEN 
+                                     for light in self.traffic_light_status)
+            
+            if traffic_light_ok and self.lane_detected and not self.has_obstacles_in_path():
+                self.current_waypoint_idx += 1
+                self.publish_next_waypoint()
+
+    def has_obstacles_in_path(self):
+        """Check for obstacles in the immediate path to next waypoint"""
+        # Implement actual obstacle checking logic here
+        # Currently just returns False as placeholder
+        return False
 
     def log_position(self):
         if self.current_pose:
@@ -205,10 +253,14 @@ class PlanningNode(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = PlanningNode()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
+    try:
+        node = PlanningNode()
+        rclpy.spin(node)
+    except Exception as e:
+        node.get_logger().error(f"Error in PlanningNode: {str(e)}")
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
 
 if __name__ == "__main__":
     main()
