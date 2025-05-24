@@ -1,0 +1,56 @@
+[0.651s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/mahmud/Documents/ABU_shell_auto']
+[0.651s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/mahmud/Documents/ABU_shell_auto'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7ed5a7ebdaf0>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7ed5a7ebcd70>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7ed5a7ebcd70>>, mixin_verb=('list',))
+[0.766s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.766s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.766s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.766s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.766s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.766s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/mahmud/Documents/ABU_shell_auto'
+[0.767s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extensions ['ignore', 'ignore_ament_install']
+[0.767s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extension 'ignore'
+[0.767s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extension 'ignore_ament_install'
+[0.768s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extensions ['colcon_pkg']
+[0.768s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extension 'colcon_pkg'
+[0.768s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extensions ['colcon_meta']
+[0.768s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extension 'colcon_meta'
+[0.768s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extensions ['ros']
+[0.768s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extension 'ros'
+[0.849s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extensions ['cmake', 'python']
+[0.849s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extension 'cmake'
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extension 'python'
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extensions ['python_setup_py']
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto) by extension 'python_setup_py'
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/build) by extensions ['ignore', 'ignore_ament_install']
+[0.850s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/build) by extension 'ignore'
+[0.851s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/build) ignored
+[0.851s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/install) by extensions ['ignore', 'ignore_ament_install']
+[0.851s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/install) by extension 'ignore'
+[0.851s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/install) ignored
+[0.851s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/log) by extensions ['ignore', 'ignore_ament_install']
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/log) by extension 'ignore'
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/log) ignored
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extensions ['ignore', 'ignore_ament_install']
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extension 'ignore'
+[0.852s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extension 'ignore_ament_install'
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extensions ['colcon_pkg']
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extension 'colcon_pkg'
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extensions ['colcon_meta']
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extension 'colcon_meta'
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extensions ['ros']
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extension 'ros'
+[0.853s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extensions ['cmake', 'python']
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extension 'cmake'
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extension 'python'
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extensions ['python_setup_py']
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src) by extension 'python_setup_py'
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src/shell_simulation) by extensions ['ignore', 'ignore_ament_install']
+[0.854s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src/shell_simulation) by extension 'ignore'
+[0.855s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src/shell_simulation) by extension 'ignore_ament_install'
+[0.855s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src/shell_simulation) by extensions ['colcon_pkg']
+[0.855s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src/shell_simulation) by extension 'colcon_pkg'
+[0.855s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src/shell_simulation) by extensions ['colcon_meta']
+[0.855s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src/shell_simulation) by extension 'colcon_meta'
+[0.855s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src/shell_simulation) by extensions ['ros']
+[0.855s] Level 1:colcon.colcon_core.package_identification:_identify(/home/mahmud/Documents/ABU_shell_auto/src/shell_simulation) by extension 'ros'
+[0.862s] DEBUG:colcon.colcon_core.package_identification:Package '/home/mahmud/Documents/ABU_shell_auto/src/shell_simulation' with type 'ros.ament_python' and name 'shell_simulation'
+[0.862s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
